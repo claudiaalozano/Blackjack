@@ -47,13 +47,13 @@ numero_partida= int(input("Cuantas partidas quieres jugar: "))
 contador= 0
 
 if score_banca == score:
-    contador += contador 
-    numero_partida -= numero_partida
+    contador= contador + 1
+    numero_partida= numero_partida - 1
     print("Habeis empatado, vuelva a jugar." , "Número de partidas: " , contador , "." , "Te quedan " , numero_partida , " partidas")
 if score_banca > score: 
-    contador += contador
-    numero_partida -= numero_partida
+    contador= contador + 1
+    numero_partida = numero_partida - 1
     print("Has perdido, vuelva a jugar." , "Número de partidas: " , contador , "." , "Te quedan" , numero_partida , " partidas")
 else:
-    contador += contador
+    contador = contador + 1
     print("Has ganado." , "Número de partidas: " , contador)
