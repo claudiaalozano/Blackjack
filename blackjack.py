@@ -16,4 +16,44 @@ cartas = {
     chr(0x1f0ae): 10,
 }
 
-        
+print("Cartas: {}".format(" ".join(cartas.keys())))
+print("Puntos: {}".format(list(cartas.values())))
+
+print("1\ Iteración estándar sobre un diccionario")
+for carta, valor in cartas.items():
+    print("la carta {} vale {}".format(carta, valor))
+
+print("2\ Iteración ordenada sobre un diccionario")
+for carta in sorted(cartas.keys()):
+    print("la carta {} vale {}".format(carta, cartas[carta]))
+
+print("3\ Black Jack")
+lista_cartas = list(cartas)
+
+print("Ha seleccionado:", end=" ")
+carta = choice(lista_cartas)
+score = cartas[carta]
+print(carta, end=" ")
+carta = choice(lista_cartas)
+score += cartas[carta]
+print(carta, end=" ")
+print(" >>> su puntuación es de", score)
+
+main_banca = sample(lista_cartas, 2)
+score_banca = sum(cartas[carta] for carta in main_banca)
+print("La banca tiene: {} {}  >> su score es {}".format(main_banca[0], main_banca[1], score_banca))
+
+numero_partida= int(input("Cuantas partidas quieres jugar: "))
+contador= 0
+
+if score_banca == score:
+    contador += contador 
+    numero_partida -= numero_partida
+    print("Habeis empatado, vuelva a jugar." , "Número de partidas: " , contador , "." , "Te quedan " , numero_partida , " partidas")
+if score_banca > score: 
+    contador += contador
+    numero_partida -= numero_partida
+    print("Has perdido, vuelva a jugar." , "Número de partidas: " , contador , "." , "Te quedan" , numero_partida , " partidas")
+else:
+    contador += contador
+    print("Has ganado." , "Número de partidas: " , contador)
