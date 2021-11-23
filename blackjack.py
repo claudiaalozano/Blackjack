@@ -32,7 +32,7 @@ lista_cartas = list(cartas)
 
 numero_partida= int(input("Cuantas partidas quieres jugar: "))
 contador= 0
-
+partidasrestantes= int(numero_partida)
 while contador != numero_partida:
     print("Ha seleccionado:", end=" ")
     carta = choice(lista_cartas)
@@ -50,11 +50,13 @@ while contador != numero_partida:
 
     if score_banca == score:
         contador= contador + 1
-        print("Habeis empatado, vuelva a jugar." , "Número de partidas jugadas: " , contador , "." , "Te quedan " , numero_partida , " partidas")
+        partidasrestantes -= 1
+        print("Habeis empatado, vuelva a jugar." , "Número de partidas jugadas: " , contador , "." , "Te quedan " , partidasrestantes , " partidas")
 
     if score_banca > score: 
         contador= contador + 1
-        print("Has perdido, vuelva a jugar." , "Número de partidas jugadas: " , contador , "." , "Te quedan" , numero_partida , " partidas")
+        partidasrestantes -= 1
+        print("Has perdido, vuelva a jugar." , "Número de partidas jugadas: " , contador , "." , "Te quedan" , partidasrestantes , " partidas")
         
     else:
         contador = contador + 1
