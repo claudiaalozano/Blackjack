@@ -51,12 +51,24 @@ while True:
     if score_banca == score:
         contador= contador + 1
         numero_partida= numero_partida - 1
-        
         print("Habeis empatado, vuelva a jugar." , "Número de partidas jugadas: " , contador , "." , "Te quedan " , numero_partida , " partidas")
+        jugar= input("¿Quieres volver a jugar? (si/no): ")
+        if jugar ==  "no":
+            print("Gracias por jugar.")
+            break
+
     if score_banca > score: 
         contador= contador + 1
         numero_partida = numero_partida - 1
         print("Has perdido, vuelva a jugar." , "Número de partidas jugadas: " , contador , "." , "Te quedan" , numero_partida , " partidas")
+        jugar= input("¿Quieres volver a jugar? (si/no): ")
+        if jugar ==  "no":
+            print("Gracias por jugar.")
+            break
     else:
         contador = contador + 1
         print("Has ganado." , "Número de partidas jugadas: " , contador)
+        jugar= input("¿Quieres volver a jugar? (si/no): ")
+        if jugar ==  "no":
+            print("Gracias por jugar.")
+            break
