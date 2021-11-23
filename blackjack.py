@@ -30,7 +30,10 @@ for carta in sorted(cartas.keys()):
 print("3\ Black Jack")
 lista_cartas = list(cartas)
 
-while True:
+numero_partida= int(input("Cuantas partidas quieres jugar: "))
+contador= 0
+
+while contador != numero_partida:
     print("Ha seleccionado:", end=" ")
     carta = choice(lista_cartas)
     score = cartas[carta]
@@ -44,31 +47,15 @@ while True:
     score_banca = sum(cartas[carta] for carta in main_banca)
     print("La banca tiene: {} {}  >> su score es {}".format(main_banca[0], main_banca[1], score_banca))
 
-    numero_partida= int(input("Cuantas partidas quieres jugar: "))
-    contador= 0
-
 
     if score_banca == score:
         contador= contador + 1
-        numero_partida= numero_partida - 1
         print("Habeis empatado, vuelva a jugar." , "Número de partidas jugadas: " , contador , "." , "Te quedan " , numero_partida , " partidas")
-        jugar= input("¿Quieres volver a jugar? (si/no): ")
-        if jugar ==  "no":
-            print("Gracias por jugar.")
-            break
 
     if score_banca > score: 
         contador= contador + 1
-        numero_partida = numero_partida - 1
         print("Has perdido, vuelva a jugar." , "Número de partidas jugadas: " , contador , "." , "Te quedan" , numero_partida , " partidas")
-        jugar= input("¿Quieres volver a jugar? (si/no): ")
-        if jugar ==  "no":
-            print("Gracias por jugar.")
-            break
+        
     else:
         contador = contador + 1
         print("Has ganado." , "Número de partidas jugadas: " , contador)
-        jugar= input("¿Quieres volver a jugar? (si/no): ")
-        if jugar ==  "no":
-            print("Gracias por jugar.")
-            break
