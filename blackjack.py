@@ -60,4 +60,5 @@ while contador != numero_partida:
         
     else:
         contador = contador + 1
-        print("Has ganado." , "Número de partidas jugadas: " , contador)
+        partidasrestantes -= 1
+        print("Has ganado." , "Número de partidas jugadas: " , contador )
