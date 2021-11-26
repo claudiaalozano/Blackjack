@@ -22,7 +22,7 @@ cartas = {
     chr(0x1f0ae): 10,
 }
 
-print("Cartas: {}".format(" ".join(cartas.keys())))
+print("Car: {}".format(" ".join(cartas.keys())))
 print("Puntos: {}".format(list(cartas.values())))
 
 print("1\ Iteración estándar sobre un diccionario")
